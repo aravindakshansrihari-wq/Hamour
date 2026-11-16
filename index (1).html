@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Karak with Hamour – The UAE markets, explained over karak</title>
+<meta name="description" content="A free weekly email on UAE stocks, bonds and sukuks. Four minutes, zero hot tips.">
+<meta name="theme-color" content="#FFF4E6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%23FF7A3D'/%3E%3Cstop offset='1' stop-color='%23E63973'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='8' y='4' width='7' height='32' rx='2' fill='%231E1A2B'/%3E%3Crect x='25' y='4' width='7' height='32' rx='2' fill='%231E1A2B'/%3E%3Crect x='3' y='17' width='34' height='7' rx='3.5' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Noto+Kufi+Arabic:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --sand: #FFF4E6;
+    --paper: #FFFBF5;
+    --night: #1E1A2B;
+    --sunset: #FF7A3D;
+    --rose: #E63973;
+    --dusk: #5B2A86;
+    --deep-sea: #0F2A3D;
+    --gold: #FFC857;
+    --lagoon: #2EC4B6;
+    --muted: #4E475E;        /* secondary text on sand, 8:1 */
+    --glow: linear-gradient(100deg, var(--sunset), var(--rose));
+    --display: "Bricolage Grotesque", "Arial Rounded MT Bold", "Helvetica Neue", Arial, sans-serif;
+    --body: "Plus Jakarta Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --arabic: "Noto Kufi Arabic", "Geeza Pro", "Segoe UI", Tahoma, sans-serif;
+    --gutter: clamp(1.25rem, 5vw, 3rem);
+    --radius: 14px;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--sand);
+    color: var(--night);
+    font: 400 1.0625rem/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg { max-width: 100%; display: block; }
+  h1, h2, h3, p { margin: 0; }
+  .wrap { width: 100%; max-width: 72rem; margin-inline: auto; padding-inline: var(--gutter); }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+  :focus-visible { outline: 3px solid var(--dusk); outline-offset: 3px; }
+
+  /* ---------- Logo ---------- */
+  .logo { display: inline-flex; align-items: center; gap: .7rem; text-decoration: none; color: inherit; }
+  .logo svg { width: 2.6rem; height: 2.6rem; flex: none; }
+  .logo-words { display: flex; flex-direction: column; line-height: 1.05; }
+  .logo-en {
+    font: 800 1.15rem/1 var(--display);
+    font-variation-settings: "wdth" 88, "opsz" 24;
+    letter-spacing: -0.01em;
+  }
+  .logo-ar { font: 700 .95rem/1.5 var(--arabic); color: var(--dusk); align-self: flex-start; }
+
+  /* ---------- Waitlist form (swap for beehiiv) ---------- */
+  .waitlist { display: grid; gap: .75rem; max-width: 30rem; }
+  .waitlist-row { display: flex; flex-direction: column; gap: .75rem; }
+  .waitlist input {
+    width: 100%;
+    min-height: 3.5rem;
+    padding: .9rem 1.1rem;
+    font: 500 1.0625rem/1.2 var(--body);
+    color: var(--night);
+    background: var(--paper);
+    border: 2px solid var(--night);
+    border-radius: var(--radius);
+  }
+  .waitlist input::placeholder { color: #6A6378; opacity: 1; }
+  .waitlist input[aria-invalid="true"] { border-color: var(--rose); box-shadow: inset 0 0 0 1px var(--rose); }
+  .btn {
+    min-height: 3.5rem;
+    padding: .9rem 1.5rem;
+    font: 800 1.1875rem/1 var(--display);     /* ≥18.67px bold = large text for contrast */
+    font-variation-settings: "wdth" 90, "opsz" 24;
+    color: var(--night);
+    background: var(--glow);
+    border: 2px solid var(--night);
+    border-radius: var(--radius);
+    box-shadow: 4px 4px 0 var(--night);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: transform .12s ease, box-shadow .12s ease;
+  }
+  .btn:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--night); }
+  .btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--night); }
+  .btn:disabled { cursor: default; transform: none; box-shadow: 2px 2px 0 var(--night); }
+  .waitlist-label { font: 700 1.0625rem/1.3 var(--display); font-variation-settings: "wdth" 90, "opsz" 24; margin-bottom: -.15rem; }
+  .foot .waitlist-label { color: var(--sand); }
+  .form-note { font-size: .9375rem; color: var(--muted); min-height: 1.5em; }
+  .form-note.is-error { color: #B3164F; font-weight: 600; }
+  .form-note.is-done { color: var(--dusk); font-weight: 700; }
+  @media (min-width: 34rem) {
+    .waitlist-row { flex-direction: row; }
+    .waitlist input { flex: 1; }
+  }
+
+  /* ---------- 1. Hero ---------- */
+  .hero { padding-block: 1.25rem clamp(3rem, 8vw, 5.5rem); overflow: hidden; }
+  .hero-top { display: flex; align-items: center; justify-content: space-between; padding-block: .5rem 2.25rem; }
+  .hero-grid { display: grid; gap: 2.5rem; align-items: center; }
+  .hero h1 {
+    font: 800 clamp(2.75rem, 9.5vw, 5.4rem)/0.95 var(--display);
+    font-variation-settings: "wdth" 82, "opsz" 96;
+    letter-spacing: -0.025em;
+    max-width: 11ch;
+    text-wrap: balance;
+  }
+  .hero-sub {
+    margin-top: 1.25rem;
+    font-size: clamp(1.125rem, 2.4vw, 1.3125rem);
+    line-height: 1.5;
+    max-width: 30ch;
+    color: var(--muted);
+  }
+  .hero .waitlist { margin-top: 2rem; }
+  .hero-art { width: min(100%, 26rem); margin-inline: auto; }
+  @media (min-width: 56rem) {
+    .hero-top { padding-bottom: 3.5rem; }
+    .hero-grid { grid-template-columns: 1.15fr .85fr; gap: 3rem; }
+    .hero-art { width: 100%; }
+  }
+
+  /* Hero illustration motion: one sunrise on load, gentle steam */
+  .sun { transform-box: fill-box; transform-origin: center; animation: rise 1.6s cubic-bezier(.2,.8,.2,1) .2s both; }
+  @keyframes rise { from { transform: translateY(70px); } to { transform: translateY(0); } }
+  .steam path { animation: steam 3.6s ease-in-out infinite; opacity: 0; }
+  .steam path:nth-child(2) { animation-delay: 1.2s; }
+  .steam path:nth-child(3) { animation-delay: 2.4s; }
+  @keyframes steam {
+    0% { opacity: 0; transform: translateY(8px); }
+    35% { opacity: .55; }
+    100% { opacity: 0; transform: translateY(-14px); }
+  }
+  /* The pour: pot tilts in (0.5s), pours (~1.7–3.4s), lifts away; tea rises; steam starts after */
+  .pot { opacity: 0; transform-origin: 0 0; animation: pour 4s cubic-bezier(.45,0,.3,1) .5s both; }
+  @keyframes pour {
+    0%   { opacity: 0; transform: translate(26px, -28px) rotate(0deg); }
+    14%  { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+    30%, 72% { opacity: 1; transform: translate(0, 0) rotate(-35deg); }
+    86%  { opacity: 1; transform: translate(0, -4px) rotate(0deg); }
+    100% { opacity: 0; transform: translate(26px, -30px) rotate(0deg); }
+  }
+  .stream { stroke-dasharray: 107 214; stroke-dashoffset: -107; animation: stream 4s linear .5s both; }
+  @keyframes stream {
+    0%, 30% { stroke-dashoffset: 107; }
+    37%, 72% { stroke-dashoffset: 0; }
+    82%, 100% { stroke-dashoffset: -107; }
+  }
+  .tea { animation: fill-up 4s ease-out .5s both; }
+  @keyframes fill-up { 0%, 34% { transform: translateY(50px); } 78%, 100% { transform: translateY(0); } }
+  .steam { animation: appear .8s ease 3.7s both; }
+  @keyframes appear { from { opacity: 0; } }
+  .shimmer path { transform-box: fill-box; transform-origin: center; animation: shimmer 3.2s ease-in-out infinite alternate; }
+  .shimmer path:nth-child(2) { animation-delay: -1.1s; }
+  .shimmer path:nth-child(3) { animation-delay: -2.2s; }
+  @keyframes shimmer { to { transform: scaleX(.8); } }
+  .your-tea { transform: translateY(50px); transition: transform 1.5s cubic-bezier(.3,.7,.3,1) .5s; }
+  .is-seated .your-tea { transform: none; }
+  .your-steam { opacity: 0; transition: opacity .8s ease 1.8s; }
+  .is-seated .your-steam { opacity: 1; }
+  .dhow { animation: bob 5s ease-in-out infinite; }
+  @keyframes bob { 50% { transform: translateY(2px); } }
+  .your-cup { opacity: 0; transform: translateY(14px) scale(.9); transform-box: fill-box; transform-origin: bottom center; transition: opacity .5s ease, transform .6s cubic-bezier(.3,1.5,.5,1); }
+  .is-seated .your-cup { opacity: 1; transform: none; }
+
+  /* ---------- 2. What's inside (the menu) ---------- */
+  .inside { background: var(--night); color: var(--sand); padding-block: clamp(3.5rem, 9vw, 6rem); }
+  .menu { max-width: 44rem; margin-inline: auto; }
+  .menu h2 {
+    font: 800 clamp(2.25rem, 6vw, 3.5rem)/1 var(--display);
+    font-variation-settings: "wdth" 82, "opsz" 72;
+    letter-spacing: -0.02em;
+  }
+  .menu-intro { margin-top: .75rem; color: #E8DCCB; }
+  .menu-list { list-style: none; margin: 2.5rem 0 0; padding: 0; display: grid; gap: 2rem; }
+  .menu-item { display: grid; grid-template-columns: 2.75rem 1fr; gap: 1rem; align-items: start; }
+  .menu-item svg { width: 2.75rem; height: 2.75rem; }
+  .menu-line { display: flex; align-items: baseline; gap: .6rem; }
+  .menu-name {
+    font: 700 clamp(1.3rem, 3.4vw, 1.6rem)/1.15 var(--display);
+    font-variation-settings: "wdth" 90, "opsz" 36;
+    color: var(--gold);
+  }
+  .menu-leader { flex: 1; min-width: 1.5rem; border-bottom: 2px dotted rgba(255, 244, 230, .4); transform: translateY(-.3em); }
+  .menu-price { font: 700 1rem/1 var(--body); color: var(--lagoon); white-space: nowrap; }
+  .menu-desc { margin-top: .35rem; color: #E8DCCB; max-width: 34rem; }
+  .menu-foot {
+    margin-top: 2.75rem;
+    padding-top: 1.25rem;
+    border-top: 2px solid rgba(255, 244, 230, .18);
+    display: flex; flex-wrap: wrap; gap: .25rem 1rem; justify-content: space-between;
+    font-size: .9375rem; color: #E8DCCB;
+  }
+  .menu-foot strong { color: var(--sand); font-family: var(--display); font-size: 1.125rem; }
+  .inside :focus-visible { outline-color: var(--gold); }
+
+  /* ---------- 3. A taste ---------- */
+  .taste { padding-block: clamp(3.5rem, 9vw, 6.5rem); }
+  .taste-grid { display: grid; gap: 2.5rem; align-items: center; }
+  .taste-lead { font-weight: 600; color: var(--dusk); }
+  .taste h2 {
+    margin-top: .5rem;
+    font: 800 clamp(1.9rem, 5vw, 2.9rem)/1.05 var(--display);
+    font-variation-settings: "wdth" 85, "opsz" 72;
+    letter-spacing: -0.02em;
+    max-width: 18ch;
+    text-wrap: balance;
+  }
+  .taste-spoiler { margin-top: .9rem; font: 600 1.1875rem/1.4 var(--display); color: var(--dusk); }
+  .taste-body { margin-top: 1.25rem; display: grid; gap: .9rem; max-width: 36rem; color: var(--muted); }
+  @media (min-width: 56rem) { .taste-grid { grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; } .demo { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 1.5rem); } }
+
+  .demo {
+    background: var(--paper);
+    border: 2px solid var(--night);
+    border-radius: 22px;
+    box-shadow: 6px 6px 0 var(--dusk);
+    padding: clamp(1.25rem, 4vw, 2rem);
+  }
+  .demo-label {
+    display: inline-block;
+    font-size: .875rem; font-weight: 700;
+    color: var(--night);
+    background: var(--gold);
+    border-radius: 999px;
+    padding: .3rem .8rem;
+  }
+  .demo-co { margin-top: .9rem; font: 700 1.25rem/1.2 var(--display); }
+  .toggle {
+    margin-top: 1.1rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    border: 2px solid var(--night);
+    border-radius: 999px;
+    padding: 4px;
+    gap: 4px;
+  }
+  .toggle button {
+    font: 600 .9375rem/1.2 var(--body);
+    color: var(--night);
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    padding: .65rem .5rem;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease;
+  }
+  .toggle button[aria-pressed="true"] { background: var(--night); color: var(--sand); }
+  .demo-rows { margin: 1.5rem 0 0; display: grid; gap: .6rem; }
+  .demo-row { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+  .demo-row dt { display: flex; align-items: center; gap: .55rem; }
+  .demo-row dd { margin: 0; white-space: nowrap; font: 700 1.125rem/1 var(--display); font-variant-numeric: tabular-nums; }
+  .swatch { width: .9rem; height: .9rem; border-radius: 4px; border: 2px solid var(--night); flex: none; }
+  .swatch-share { background: var(--dusk); }
+  .swatch-div { background: var(--rose); }
+  .bar {
+    margin-top: 1.25rem;
+    display: flex; height: 2.75rem;
+    border: 2px solid var(--night);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .bar-share { background: var(--dusk); width: 100%; transition: width .7s cubic-bezier(.3,1,.4,1); }
+  .bar-div { background: var(--rose); width: 0%; transition: width .7s cubic-bezier(.3,1,.4,1); }
+  .is-ex .bar-share { width: 95.83%; }  /* 11.50 of 12.00 */
+  .is-ex .bar-div { width: 4.17%; border-left: 2px solid var(--night); }
+  .demo-total { margin-top: 1rem; padding-top: 1rem; border-top: 2px dashed rgba(30, 26, 43, .25); }
+  .demo-total dd { font-size: 1.375rem; }
+  .demo-caption { margin-top: .9rem; font-size: .9375rem; color: var(--muted); min-height: 4.5em; }
+  .demo-co-sub { display: block; margin-top: .2rem; font: 500 .9375rem/1.4 var(--body); color: var(--muted); }
+  .demo-source { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid rgba(30, 26, 43, .15); font-size: .8125rem; color: var(--muted); }
+
+  .callout {
+    margin-top: 2rem;
+    padding: clamp(1.1rem, 3.5vw, 1.6rem);
+    background: var(--paper);
+    border: 2px solid var(--night);
+    border-radius: 18px;
+    box-shadow: 6px 6px 0 var(--sunset);
+    display: grid; gap: .75rem;
+    max-width: 36rem;
+    color: var(--muted);
+  }
+  .callout-kicker { font-weight: 700; color: var(--dusk); }
+  .callout-main { font: 700 clamp(1.2rem, 2.8vw, 1.45rem)/1.35 var(--display); color: var(--night); }
+  .hl {
+    color: inherit;
+    background: linear-gradient(transparent 52%, var(--gold) 52%, var(--gold) 92%, transparent 92%) no-repeat 0 0 / 100% 100%;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone;
+    padding: 0 .1em;
+    transition: background-size 1.1s cubic-bezier(.3,.8,.3,1) .15s;
+  }
+  .hl.hl-wait { background-size: 0% 100%; }
+
+  /* ---------- 4. Footer ---------- */
+  .foot { position: relative; background: var(--dusk); color: var(--sand); padding-block: clamp(3.5rem, 9vw, 6rem) 2.5rem; overflow: hidden; }
+  .foot::before {
+    content: ""; position: absolute; inset: 0 0 auto; height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M0 14 A14 14 0 0 1 28 14' fill='%23FFF4E6'/%3E%3C/svg%3E");
+    background-size: 28px 14px;
+    transform: scaleY(-1);
+  }
+  .foot-pattern { position: absolute; right: -4rem; top: 2rem; width: 22rem; opacity: .14; pointer-events: none; }
+  .foot-inner { position: relative; }
+  .foot h2 {
+    font: 800 clamp(2.25rem, 7vw, 4rem)/1 var(--display);
+    font-variation-settings: "wdth" 82, "opsz" 96;
+    letter-spacing: -0.02em;
+    max-width: 14ch;
+  }
+  .foot-sub { margin-top: .9rem; max-width: 34rem; color: #F1E6F7; }
+  .foot .waitlist { margin-top: 1.75rem; }
+  .foot .waitlist input { border-color: var(--night); }
+  .foot .form-note { color: #F1E6F7; }
+  .foot .form-note.is-error { color: var(--gold); }
+  .foot .form-note.is-done { color: var(--gold); }
+  .foot :focus-visible { outline-color: var(--gold); }
+  .foot-legal {
+    margin-top: clamp(3rem, 8vw, 4.5rem);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 244, 230, .25);
+    display: grid; gap: 1.25rem;
+    font-size: .875rem; color: #F1E6F7;
+  }
+  .foot-legal .disclaimer { max-width: 44rem; }
+  .foot-brand { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; }
+  .foot .logo-ar { color: var(--gold); }
+  @media (min-width: 56rem) { .foot-pattern { width: 30rem; right: 0; } }
+
+  /* ---------- Live waitlist counter ---------- */
+  .seat-count {
+    position: relative;
+    display: inline-flex; flex-wrap: wrap; align-items: center; gap: .4rem .65rem;
+    margin-top: 1rem;
+    padding: .45rem .95rem .45rem .55rem;
+    background: var(--paper);
+    color: var(--night);
+    border: 2px solid var(--night);
+    border-radius: 999px;
+    font-size: .9375rem; font-weight: 600; line-height: 1.3;
+  }
+  .seat-cups { width: 2.6rem; height: auto; flex: none; }
+  .odometer {
+    display: inline-flex;
+    font: 800 1.125rem/1.2 var(--display);
+    font-variant-numeric: tabular-nums;
+    vertical-align: bottom;
+  }
+  .odo-digit { display: inline-block; height: 1.2em; overflow: hidden; }
+  .odo-reel { display: flex; flex-direction: column; transition: transform 1s cubic-bezier(.2,.9,.25,1); }
+  .odo-reel span { height: 1.2em; }
+  .odometer.no-anim .odo-reel { transition: none; }
+  .live-tag {
+    display: inline-flex; align-items: center; gap: .35rem;
+    font-size: .8125rem; font-weight: 700;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #E3F7F5;
+  }
+  .live-tag[hidden] { display: none; }
+  .live-dot { position: relative; width: .55rem; height: .55rem; border-radius: 50%; background: #0E8C81; }
+  .live-dot::after {
+    content: ""; position: absolute; inset: 0; border-radius: 50%;
+    background: var(--lagoon);
+    animation: ping 2s ease-out infinite;
+  }
+  @keyframes ping { from { transform: scale(1); opacity: .8; } to { transform: scale(2.6); opacity: 0; } }
+  .seat-bump {
+    position: absolute; right: .5rem; top: -.9rem;
+    padding: .15rem .6rem;
+    font-size: .8125rem; font-weight: 700;
+    background: var(--gold);
+    border: 2px solid var(--night);
+    border-radius: 999px;
+    opacity: 0; transform: translateY(6px);
+    pointer-events: none;
+    transition: opacity .3s ease, transform .4s cubic-bezier(.3,1.5,.5,1);
+  }
+  .seat-bump.is-on { opacity: 1; transform: translateY(0) rotate(-3deg); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .steam path { opacity: .4; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ 1. HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <a class="logo" href="#top" aria-label="Karak with Hamour, home">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <defs>
+            <linearGradient id="hx" x1="0" x2="1"><stop offset="0" stop-color="#FF7A3D"/><stop offset="1" stop-color="#E63973"/></linearGradient>
+          </defs>
+          <rect x="8" y="4" width="7" height="32" rx="2" fill="#1E1A2B"/>
+          <rect x="25" y="4" width="7" height="32" rx="2" fill="#1E1A2B"/>
+          <rect x="3" y="17" width="34" height="7" rx="3.5" fill="url(#hx)"/>
+        </svg>
+        <span class="logo-words">
+          <span class="logo-en">Karak with Hamour</span>
+          <span class="logo-ar" lang="ar" dir="rtl">هامور</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1>The UAE markets, explained over karak.</h1>
+        <p class="hero-sub">A free weekly email on UAE stocks, bonds and sukuks. Four minutes, zero hot tips.</p>
+
+        <!-- WAITLIST FORM (hero). To go live: replace this <form> with your beehiiv embed,
+             or set action="" to your beehiiv subscribe endpoint. Keep name="email". -->
+        <form class="waitlist" action="" method="post" novalidate data-waitlist>
+          <label class="waitlist-label" for="email-hero">Join the waitlist<span class="sr-only">: enter your email address</span></label>
+          <div class="waitlist-row">
+            
+            <input id="email-hero" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required aria-describedby="note-hero">
+            <button class="btn" type="submit">Save my seat</button>
+          </div>
+          <p class="form-note" id="note-hero" role="status" aria-live="polite">Free, every Sunday morning. Unsubscribe any time.</p>
+        </form>
+        <!-- LIVE WAITLIST COUNTER: rendered by the script at the bottom (see WAITLIST_COUNTER). -->
+        <p class="seat-count" data-seat-count>
+          <svg class="seat-cups" viewBox="0 0 54 24" aria-hidden="true">
+            <g stroke="#1E1A2B" stroke-width="2" stroke-linejoin="round">
+              <path d="M2 4h14l-2 18H4z" fill="#D58A4E"/><path d="M20 4h14l-2 18H22z" fill="#FF7A3D"/><path d="M38 4h14l-2 18H40z" fill="#E63973"/>
+            </g>
+          </svg>
+          <span class="seat-text"><strong class="odometer" data-odometer aria-hidden="true">177</strong><span aria-hidden="true">+ have already saved their seat</span><span class="sr-only" data-count-text>177+ have already saved their seat</span></span>
+          <span class="live-tag" data-live hidden><span class="live-dot" aria-hidden="true"></span>Live</span>
+          <span class="seat-bump" data-bump aria-hidden="true">+1, that’s you</span>
+        </p>
+      </div>
+
+      <svg class="hero-art" viewBox="0 0 400 500" role="img" aria-label="Illustration: a glass of karak on a table in front of an arched window, looking out over a sunset, a city skyline and a dhow on the water.">
+        <defs>
+          <pattern id="mashrabiya" width="16" height="16" patternUnits="userSpaceOnUse">
+            <rect width="16" height="16" fill="#FFF4E6"/>
+            <g fill="none" stroke="#5B2A86" stroke-width="1.2">
+              <rect x="4" y="4" width="8" height="8"/>
+              <rect x="4" y="4" width="8" height="8" transform="rotate(45 8 8)"/>
+              <path d="M0 8h2.3M13.7 8H16M8 0v2.3M8 13.7V16"/>
+            </g>
+          </pattern>
+          <clipPath id="glass-mine"><path d="M260.3 400h43.4l-5.9 58h-31.6z"/></clipPath>
+          <clipPath id="glass-yours"><path d="M126.3 400h43.4l-5.9 58h-31.6z"/></clipPath>
+          <clipPath id="window"><path d="M46 470V214a154 154 0 0 1 308 0v256z"/></clipPath>
+        </defs>
+
+        <!-- Arch frame with mashrabiya lattice -->
+        <path d="M18 470V214a182 182 0 0 1 364 0v256z" fill="url(#mashrabiya)" stroke="#1E1A2B" stroke-width="3"/>
+
+        <!-- View through the window -->
+        <g clip-path="url(#window)">
+          <rect x="0" y="0" width="400" height="340" fill="#FFE7CC"/>
+          <rect x="0" y="250" width="400" height="90" fill="#FFD6B3"/>
+          <circle class="sun" cx="150" cy="316" r="64" fill="#FF7A3D"/>
+          <!-- Skyline -->
+          <path fill="#5B2A86" d="M40 340V306h20v-16h16v16h12v-40h14v40h12v-8h18v-24h8v-10h8v10h8v32h20v14h16v-30h12v30h8v-58h6v-38h3v-46h2v46h3v38h6v58h10v-24h18v24h12v-36h16v36h14v-16h22v52z"/>
+          <!-- Sea -->
+          <rect x="0" y="340" width="400" height="140" fill="#0F2A3D"/>
+          <g class="shimmer" stroke-linecap="round">
+            <path d="M112 354h76" stroke="#FF7A3D" stroke-width="5"/>
+            <path d="M124 368h52" stroke="#FF7A3D" stroke-width="4"/>
+            <path d="M136 381h28" stroke="#FFC857" stroke-width="3"/>
+            <path d="M70 400h26M300 362h30M74 376h20" stroke="#2EC4B6" stroke-width="2.5" opacity=".7"/>
+          </g>
+          <!-- Dhow -->
+          <g class="dhow">
+            <g transform="translate(204 384) scale(.8)">
+              <path d="M29 0V-46" stroke="#FFF4E6" stroke-width="2"/>
+              <path d="M30 -48L58 -6L10 -4Z" fill="#FFF4E6"/>
+              <path d="M0 0h62l-10 12H10z" fill="#FFC857"/>
+            </g>
+          </g>
+        </g>
+        <path d="M46 470V214a154 154 0 0 1 308 0v256" fill="none" stroke="#1E1A2B" stroke-width="3"/>
+
+        <!-- Table -->
+        <rect x="0" y="462" width="400" height="38" rx="10" fill="#1E1A2B"/>
+
+        <!-- The karak glass: the pot pours, the tea rises, then the steam starts -->
+        <g>
+          <ellipse cx="282" cy="462" rx="42" ry="7" fill="#FFF4E6" stroke="#1E1A2B" stroke-width="3"/>
+          <path d="M258 398h48l-6 62h-36z" fill="#FFFBF5" fill-opacity=".55" stroke="#1E1A2B" stroke-width="3" stroke-linejoin="round"/>
+          <path class="stream" d="M284 350V457" stroke="#B9682F" stroke-width="5" stroke-linecap="round"/>
+          <g clip-path="url(#glass-mine)">
+            <g class="tea">
+              <rect x="255" y="412" width="54" height="50" fill="#D58A4E"/>
+              <path d="M255 412h54" stroke="#F6CF9A" stroke-width="5"/>
+            </g>
+          </g>
+          <g class="steam" fill="none" stroke="#1E1A2B" stroke-width="3" stroke-linecap="round">
+            <path d="M272 388c-7-9 7-15 0-24s7-15 0-24"/>
+            <path d="M284 384c-7-9 7-15 0-24s7-15 0-24"/>
+            <path d="M296 388c-7-9 7-15 0-24s7-15 0-24"/>
+          </g>
+        </g>
+
+        <!-- Karak pot: tilts in, pours, then lifts away -->
+        <g transform="translate(329.7 335.1)">
+          <g class="pot" stroke="#1E1A2B" stroke-linejoin="round">
+            <path d="M22 -12C40 -14 42 10 24 10" fill="none" stroke-width="4" stroke-linecap="round"/>
+            <path d="M-23 6C-34 4 -38 -4 -46 -14L-40 -17C-35 -9 -30 -5 -22 -4Z" fill="#2EC4B6" stroke-width="2.5"/>
+            <path d="M-26 14C-30 -6 -18 -22 0 -22S30 -6 26 14Z" fill="#2EC4B6" stroke-width="3"/>
+            <path d="M-24 2H24" stroke="#FFF4E6" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round"/>
+            <path d="M-14 -21Q0 -32 14 -21Z" fill="#FFC857" stroke-width="3"/>
+            <circle cy="-31" r="4" fill="#1E1A2B" stroke="none"/>
+          </g>
+        </g>
+
+        <!-- Your glass: appears, fills and steams when a seat is saved -->
+        <g class="your-cup">
+          <ellipse cx="148" cy="462" rx="42" ry="7" fill="#FFF4E6" stroke="#1E1A2B" stroke-width="3"/>
+          <path d="M124 398h48l-6 62h-36z" fill="#FFFBF5" fill-opacity=".55" stroke="#1E1A2B" stroke-width="3" stroke-linejoin="round"/>
+          <g clip-path="url(#glass-yours)">
+            <g class="your-tea">
+              <rect x="121" y="412" width="54" height="50" fill="#D58A4E"/>
+              <path d="M121 412h54" stroke="#F6CF9A" stroke-width="5"/>
+            </g>
+          </g>
+          <g class="your-steam">
+            <g class="steam" fill="none" stroke="#1E1A2B" stroke-width="3" stroke-linecap="round">
+              <path d="M138 388c-7-9 7-15 0-24s7-15 0-24"/>
+              <path d="M150 384c-7-9 7-15 0-24s7-15 0-24"/>
+              <path d="M162 388c-7-9 7-15 0-24s7-15 0-24"/>
+            </g>
+          </g>
+          <g transform="translate(64 430) rotate(-6)">
+            <rect width="54" height="26" rx="6" fill="#FFC857" stroke="#1E1A2B" stroke-width="2.5"/>
+            <text x="27" y="17.5" text-anchor="middle" font-family="Bricolage Grotesque, Arial, sans-serif" font-weight="800" font-size="12" fill="#1E1A2B">Yours</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ 2. WHAT'S INSIDE ============ -->
+  <section class="inside" aria-labelledby="inside-title">
+    <div class="wrap">
+      <div class="menu">
+        <h2 id="inside-title">What’s inside</h2>
+        <p class="menu-intro">Served every Sunday morning. A 4–5 minute read, 100% UAE.</p>
+
+        <ul class="menu-list">
+          <li class="menu-item">
+            <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="#FF7A3D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="22" cy="24" r="15"/><path d="M22 15v9l6 4M18 5h8M22 5v4"/>
+            </svg>
+            <div>
+              <p class="menu-line"><span class="menu-name">The week in 30 seconds</span><span class="menu-leader" aria-hidden="true"></span><span class="menu-price">AED 0</span></p>
+              <p class="menu-desc">What moved on DFM and ADX, and why it matters.</p>
+            </div>
+          </li>
+          <li class="menu-item">
+            <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="#FF7A3D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 9h30v20H20l-8 7v-7H7z"/><path d="M14 23l4-9 4 9M15.5 20h5M27 17.5a3 3 0 1 0 0 5.5V16"/>
+            </svg>
+            <div>
+              <p class="menu-line"><span class="menu-name">Jargon, decoded</span><span class="menu-leader" aria-hidden="true"></span><span class="menu-price">AED 0</span></p>
+              <p class="menu-desc">Sukuks, IPOs, dividends, in plain English.</p>
+            </div>
+          </li>
+          <li class="menu-item">
+            <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="#FF7A3D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="5" width="24" height="34" rx="3"/><circle cx="22" cy="19" r="6"/><path d="M16 19h12M22 13c-2.5 3.5-2.5 8.5 0 12M22 13c2.5 3.5 2.5 8.5 0 12M16 31h12"/>
+            </svg>
+            <div>
+              <p class="menu-line"><span class="menu-name">Expat corner</span><span class="menu-leader" aria-hidden="true"></span><span class="menu-price">AED 0</span></p>
+              <p class="menu-desc">The practical stuff nobody tells you: investor numbers, brokers, dividends and what’s open to non-citizens.</p>
+            </div>
+          </li>
+        </ul>
+
+        <p class="menu-foot"><strong>Tips not included.</strong><span>The stock kind, that is. We explain; we don’t predict.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. A TASTE ============ -->
+  <section class="taste" aria-labelledby="taste-title">
+    <div class="wrap taste-grid">
+      <div>
+        <p class="taste-lead">A taste from a sample issue</p>
+        <h2 id="taste-title">Why a share price can dip overnight with nothing going wrong.</h2>
+        <p class="taste-spoiler">(Spoiler: it’s a date, not a drama.)</p>
+        <div class="taste-body">
+          <p>When a company pays a dividend, it sets a cut-off called the ex-dividend date. Own the share before it and the payout is yours. Buy on or after it and the payout goes to the seller.</p>
+          <p>Emaar Properties just did exactly this. Its one-off AED 0.50 dividend went ex-dividend on Friday 13 November, so shares bought from that day don’t get it. It’s paid on 27 November.</p>
+          <p>So on an ex-dividend morning, the price usually opens lower by roughly the dividend. Nothing broke. The value just moved from the share price into shareholders’ pockets.</p>
+        </div>
+
+        <aside class="callout" aria-labelledby="callout-title">
+          <p class="callout-kicker" id="callout-title">Meanwhile, in the same family</p>
+          <p class="callout-main"><mark class="hl" data-hl>Emaar Properties is offering AED 15 a share in cash to take Emaar Development private.</mark></p>
+          <p>It already owns about 80% of Emaar Development, so the offer is for the rest. AED 15 is 19.4% above the 2 November close of AED 12.56, the last trading day before the plan was announced. The offer runs until 10 December, subject to conditions.</p>
+          <p>Taking a company private means buying out the other shareholders so its shares stop trading on the exchange. If Emaar ends up with 90% plus one share, it can buy out the holders who didn’t accept, at the same AED 15.</p>
+        </aside>
+      </div>
+
+      <div class="demo" id="demo">
+        <span class="demo-label">Real dividend, example price</span>
+        <p class="demo-co">Emaar Properties <span class="demo-co-sub">AED 0.50 dividend, ex-dividend 13 Nov 2026</span></p>
+
+        <div class="toggle" role="group" aria-label="Choose a moment">
+          <button type="button" aria-pressed="true" data-moment="before">Thu 12 Nov close</button>
+          <button type="button" aria-pressed="false" data-moment="ex">Fri 13 Nov, ex-dividend</button>
+        </div>
+
+        <dl class="demo-rows">
+          <div class="demo-row"><dt><span class="swatch swatch-share" aria-hidden="true"></span>Share price (example)</dt><dd data-share>AED 12.00</dd></div>
+          <div class="demo-row"><dt><span class="swatch swatch-div" aria-hidden="true"></span>Dividend on its way to you</dt><dd data-div>AED 0.00</dd></div>
+        </dl>
+        <div class="bar" aria-hidden="true"><span class="bar-share"></span><span class="bar-div"></span></div>
+        <dl class="demo-rows demo-total">
+          <div class="demo-row"><dt>What you’ve got in total</dt><dd>AED 12.00</dd></div>
+        </dl>
+        <p class="demo-caption" data-caption aria-live="polite">Own one share at the 12 November close and Emaar’s AED 0.50 dividend is yours.</p>
+        <p class="demo-source">Dividend amount and dates: Emaar Properties via DFM. The AED 12.00 share price is a round example, not the actual quote.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ 4. FOOTER ============ -->
+<footer class="foot" aria-labelledby="foot-title">
+  <svg class="foot-pattern" viewBox="0 0 160 160" aria-hidden="true">
+    <defs>
+      <pattern id="mashrabiya-foot" width="20" height="20" patternUnits="userSpaceOnUse">
+        <g fill="none" stroke="#FFF4E6" stroke-width="1.4">
+          <rect x="5" y="5" width="10" height="10"/>
+          <rect x="5" y="5" width="10" height="10" transform="rotate(45 10 10)"/>
+          <path d="M0 10h2.9M17.1 10H20M10 0v2.9M10 17.1V20"/>
+        </g>
+      </pattern>
+    </defs>
+    <path d="M0 160V80a80 80 0 0 1 160 0v80z" fill="url(#mashrabiya-foot)"/>
+  </svg>
+
+  <div class="wrap foot-inner">
+    <h2 id="foot-title">Yalla, pull up a chair.</h2>
+    <p class="foot-sub">The first issue is brewing. Save your seat at the table and it lands in your inbox on a Sunday morning.</p>
+
+    <!-- WAITLIST FORM (footer). Same swap as the hero form. -->
+    <form class="waitlist" action="" method="post" novalidate data-waitlist>
+      <label class="waitlist-label" for="email-foot">Join the waitlist<span class="sr-only">: enter your email address</span></label>
+      <div class="waitlist-row">
+        
+        <input id="email-foot" type="email" name="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required aria-describedby="note-foot">
+        <button class="btn" type="submit">Save my seat</button>
+      </div>
+      <p class="form-note" id="note-foot" role="status" aria-live="polite">Free. No spam. Unsubscribe any time.</p>
+    </form>
+    <!-- LIVE WAITLIST COUNTER: rendered by the script at the bottom (see WAITLIST_COUNTER). -->
+    <p class="seat-count" data-seat-count>
+      <svg class="seat-cups" viewBox="0 0 54 24" aria-hidden="true">
+        <g stroke="#1E1A2B" stroke-width="2" stroke-linejoin="round">
+          <path d="M2 4h14l-2 18H4z" fill="#D58A4E"/><path d="M20 4h14l-2 18H22z" fill="#FF7A3D"/><path d="M38 4h14l-2 18H40z" fill="#E63973"/>
+        </g>
+      </svg>
+      <span class="seat-text"><strong class="odometer" data-odometer aria-hidden="true">177</strong><span aria-hidden="true">+ have already saved their seat</span><span class="sr-only" data-count-text>177+ have already saved their seat</span></span>
+      <span class="live-tag" data-live hidden><span class="live-dot" aria-hidden="true"></span>Live</span>
+      <span class="seat-bump" data-bump aria-hidden="true">+1, that’s you</span>
+    </p>
+
+    <div class="foot-legal">
+      <p class="disclaimer">General information and education only. Not investment advice or a recommendation to buy, sell or hold any security.</p>
+      <div class="foot-brand">
+        <span class="logo">
+          <span class="logo-words">
+            <span class="logo-en">Karak with Hamour</span>
+            <span class="logo-ar" lang="ar" dir="rtl">هامور</span>
+          </span>
+        </span>
+        <span>© 2026 Hamour. Published by Triumph Investments and Consulting, UAE.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- Waitlist forms ----
+  // Forms with an empty action run in demo mode (no data is sent).
+  // Once action points at beehiiv, or the form is swapped for the embed, this demo code stays out of the way.
+  (function () {
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    document.querySelectorAll("[data-waitlist]").forEach(function (form) {
+      var input = form.querySelector('input[type="email"]');
+      var note = form.querySelector(".form-note");
+      var button = form.querySelector("button");
+      var original = note.textContent;
+
+      input.addEventListener("input", function () {
+        if (input.getAttribute("aria-invalid") === "true") {
+          input.removeAttribute("aria-invalid");
+          note.classList.remove("is-error");
+          note.textContent = original;
+        }
+      });
+
+      form.addEventListener("submit", function (e) {
+        var value = input.value.trim();
+        if (!emailOk.test(value)) {
+          e.preventDefault();
+          input.setAttribute("aria-invalid", "true");
+          note.classList.add("is-error");
+          note.textContent = value ? "That email looks incomplete. Try something like you@email.com." : "Enter your email to save your seat.";
+          input.focus();
+          return;
+        }
+        if (form.getAttribute("action")) return; // live endpoint: let the browser submit
+
+        e.preventDefault();
+        document.querySelectorAll("[data-waitlist]").forEach(function (f) {
+          var b = f.querySelector("button");
+          var n = f.querySelector(".form-note");
+          var i = f.querySelector('input[type="email"]');
+          b.textContent = "Seat saved";
+          b.disabled = true;
+          i.value = value;
+          i.readOnly = true;
+          n.classList.remove("is-error");
+          n.classList.add("is-done");
+          n.textContent = "Seat saved. You’re on the waitlist, and your first issue lands on a Sunday morning.";
+        });
+        document.body.classList.add("is-seated");
+        if (window.waitlistCounter) window.waitlistCounter.joined();
+      });
+    });
+  })();
+
+  // ---- Live waitlist counter ----
+  // start: the number shown when the page loads.
+  // url:   an endpoint of yours that returns JSON like {"count": 212}. Once set, the counter
+  //        checks it every `everyMs`, rolls to the new number and shows a "Live" tag.
+  //        Leave it empty and the counter shows `start` (plus one when this visitor signs up).
+  var WAITLIST_COUNTER = { start: 177, url: "", everyMs: 20000 };
+
+  (function (cfg) {
+    var blocks = document.querySelectorAll("[data-seat-count]");
+    var count = cfg.start;
+    var lastLive = null;
+    var pendingSelf = 0;
+
+    function buildReel(digit) {
+      var wrap = document.createElement("span");
+      wrap.className = "odo-digit";
+      var reel = document.createElement("span");
+      reel.className = "odo-reel";
+      for (var d = 0; d <= 9; d++) {
+        var n = document.createElement("span");
+        n.textContent = d;
+        reel.appendChild(n);
+      }
+      wrap.appendChild(reel);
+      reel.style.transform = "translateY(" + (-digit * 1.2) + "em)";
+      return wrap;
+    }
+
+    function renderOdometer(el, value, instant) {
+      var text = value.toLocaleString("en-US");
+      if (el.dataset.chars !== String(text.length)) {
+        // Digit count changed (or first render): rebuild, starting each reel at 0 so it rolls in.
+        el.textContent = "";
+        el.dataset.chars = String(text.length);
+        for (var i = 0; i < text.length; i++) {
+          var ch = text[i];
+          if (/\d/.test(ch)) el.appendChild(buildReel(instant ? +ch : 0));
+          else { var sep = document.createElement("span"); sep.textContent = ch; el.appendChild(sep); }
+        }
+        if (instant) return;
+        void el.offsetWidth;
+      }
+      if (instant) el.classList.add("no-anim");
+      var reels = el.querySelectorAll(".odo-reel");
+      var digits = text.replace(/\D/g, "");
+      reels.forEach(function (reel, i) {
+        reel.style.transform = "translateY(" + (-(+digits[i]) * 1.2) + "em)";
+      });
+      if (instant) { void el.offsetWidth; el.classList.remove("no-anim"); }
+    }
+
+    function render(instant) {
+      blocks.forEach(function (b) {
+        renderOdometer(b.querySelector("[data-odometer]"), count, instant);
+        b.querySelector("[data-count-text]").textContent = count.toLocaleString("en-US") + "+ have already saved their seat";
+      });
+    }
+
+    function setLive(on) {
+      blocks.forEach(function (b) { b.querySelector("[data-live]").hidden = !on; });
+    }
+
+    function poll() {
+      if (!cfg.url || document.hidden) return;
+      fetch(cfg.url, { cache: "no-store" })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (data) {
+          var n = Math.round(Number(data && data.count));
+          if (!isFinite(n) || n < 0) throw new Error("bad count");
+          if (lastLive !== null && n > lastLive) pendingSelf = 0; // our own sign-up has arrived
+          lastLive = n;
+          var next = n + pendingSelf;
+          if (next !== count) { count = next; render(false); }
+          setLive(true);
+        })
+        .catch(function () { setLive(false); });
+    }
+
+    render(true);
+    if (cfg.url) {
+      poll();
+      setInterval(poll, cfg.everyMs);
+      document.addEventListener("visibilitychange", function () { if (!document.hidden) poll(); });
+    }
+
+    window.waitlistCounter = {
+      joined: function () {
+        count += 1;
+        pendingSelf = 1;
+        render(false);
+        blocks.forEach(function (b) {
+          var bump = b.querySelector("[data-bump]");
+          bump.classList.add("is-on");
+          setTimeout(function () { bump.classList.remove("is-on"); }, 3200);
+        });
+      }
+    };
+  })(WAITLIST_COUNTER);
+
+  // ---- Highlighter swipe on the Emaar Development line, once it scrolls into view ----
+  (function () {
+    var hl = document.querySelector("[data-hl]");
+    if (!hl || !("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    hl.classList.add("hl-wait");
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { hl.classList.remove("hl-wait"); io.disconnect(); }
+    }, { threshold: 0.8 });
+    io.observe(hl);
+  })();
+
+  // ---- "A taste" ex-dividend demo ----
+  (function () {
+    var demo = document.getElementById("demo");
+    var share = demo.querySelector("[data-share]");
+    var div = demo.querySelector("[data-div]");
+    var caption = demo.querySelector("[data-caption]");
+    var states = {
+      before: { share: "AED 12.00", div: "AED 0.00", text: "Own one share at the 12 November close and Emaar’s AED 0.50 dividend is yours." },
+      ex: { share: "AED 11.50", div: "AED 0.50", text: "In this example the share opens AED 0.50 lower, and that AED 0.50 is paid to you on 27 November. Same total. Real prices also move for other reasons on the day." }
+    };
+    demo.querySelectorAll("[data-moment]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var m = btn.getAttribute("data-moment");
+        demo.querySelectorAll("[data-moment]").forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+        demo.classList.toggle("is-ex", m === "ex");
+        share.textContent = states[m].share;
+        div.textContent = states[m].div;
+        caption.textContent = states[m].text;
+      });
+    });
+  })();
+</script>
+</body>
+</html>
